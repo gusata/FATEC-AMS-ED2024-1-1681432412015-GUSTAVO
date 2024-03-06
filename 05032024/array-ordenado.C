@@ -1,29 +1,40 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-// Função que faz a comparação para o  qsort
-int compare(const void *a, const void *b) {
-    return (*(int *)a - *(int *)b);
+// Função para ordenar os números em ordem crescente
+void ordenar(int arr[], int n) {
+    int i, j, temp;
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Trocar os elementos
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 }
 
 int main() {
-    int size = 5;
-    int IntNumbers[size];
+    int numeroInteiros[5];
+    int i;
 
-    printf("Insira 5 números:\n");
-
-    for (int i = 0; i < size; ++i) {
-        printf("Número %d: ", i + 1);
-        scanf("%d", &IntNumbers[i]);
+    // Entrada dos números
+    printf("Digite 5 números inteiros e positivos:\n");
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &numeroInteiros[i]);
     }
 
-    // Chama a função qsort para ordenar os números
-    qsort(IntNumbers, size, sizeof(int), comparar);
+    // Ordenar os números
+    ordenar(numeroInteiros, 5);
 
-    printf("\nOs Números ordenado de forma ascendente são:\n");
-    for (int i = 0; i < size; ++i) {
-        printf("%d ", IntNumbers[i]);
+    // Mostrar os números ordenados
+    printf("Números em ordem crescente:\n");
+    for (i = 0; i < 5; i++) {
+        printf("%d ", numeroInteiros[i]);
     }
+    printf("\n");
 
     return 0;
 }
