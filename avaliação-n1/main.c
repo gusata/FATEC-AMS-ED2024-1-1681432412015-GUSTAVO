@@ -4,7 +4,6 @@
 
 #define MAX_PRODUTOS 100
 
-// Estrutura para representar um produto
 typedef struct {
     char nome[50];
     int codigo;
@@ -12,7 +11,6 @@ typedef struct {
     int quantidade;
 } Produto;
 
-// Função para cadastrar um produto
 void cadastrarProduto(Produto estoque[], int *quantidadeProdutos) {
     if (*quantidadeProdutos < MAX_PRODUTOS) {
         Produto novoProduto;
@@ -34,7 +32,6 @@ void cadastrarProduto(Produto estoque[], int *quantidadeProdutos) {
     }
 }
 
-// Função para exibir todos os produtos cadastrados
 void exibirEstoque(Produto estoque[], int quantidadeProdutos) {
     if (quantidadeProdutos == 0) {
         printf("Estoque vazio!\n");
@@ -50,7 +47,6 @@ void exibirEstoque(Produto estoque[], int quantidadeProdutos) {
     }
 }
 
-// Função para buscar um produto pelo nome
 void buscarProdutoNome(Produto estoque[], int quantidadeProdutos, char *nome) {
     int encontrado = 0;
     for (int i = 0; i < quantidadeProdutos; i++) {
@@ -69,7 +65,6 @@ void buscarProdutoNome(Produto estoque[], int quantidadeProdutos, char *nome) {
     }
 }
 
-// Função para buscar um produto pelo código
 void buscarProdutoCodigo(Produto estoque[], int quantidadeProdutos, int codigo) {
     int encontrado = 0;
     for (int i = 0; i < quantidadeProdutos; i++) {
@@ -88,7 +83,6 @@ void buscarProdutoCodigo(Produto estoque[], int quantidadeProdutos, int codigo) 
     }
 }
 
-// Função para dar baixa no estoque de um produto
 void darBaixaEstoque(Produto estoque[], int quantidadeProdutos, int codigo, int quantidade) {
     int encontrado = 0;
     for (int i = 0; i < quantidadeProdutos; i++) {
