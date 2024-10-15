@@ -1,0 +1,5 @@
+O algoritmo Bubble Sort pode ser otimizado para reduzir o tempo de execução ao verificar se uma passagem do array resultou em trocas. Se não houver trocas, o algoritmo pode ser interrompido mais cedo, pois o array já está ordenado. Isso reduz o número de iterações desnecessárias, melhorando o desempenho.
+
+Ponto de melhoria implementado:
+
+Adicionada a verificação de trocas em cada iteração, utilizando uma variável swapped. Se nenhum elemento for trocado, o loop termina mais cedo.
